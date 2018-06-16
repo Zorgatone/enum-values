@@ -1,8 +1,20 @@
 "use strict";
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var enumValues_1 = require("./enumValues");
+var enumValues_1 = __importStar(require("./enumValues"));
 var chai_1 = require("chai");
 describe('EnumValues', function () {
+    describe('import', function () {
+        it('should have both default and named export', function () {
+            chai_1.expect(enumValues_1.EnumValues).to.deep.equal(enumValues_1.default);
+        });
+    });
     describe('numeric values', function () {
         var NumericValuesTestEnum;
         (function (NumericValuesTestEnum) {

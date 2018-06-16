@@ -1,10 +1,15 @@
-
-import { EnumValues } from "./enumValues";
+import { EnumValues, default as _defaultExport } from "./enumValues";
 import { expect } from 'chai';
 
 
-
 describe('EnumValues', () => {
+
+  describe('import', () => {
+    it('should have both default and named export', () => {
+      expect(EnumValues).to.deep.equal(_defaultExport);
+    });
+  });
+
   describe('numeric values', () => {
     enum NumericValuesTestEnum {
       A,
@@ -102,4 +107,5 @@ describe('EnumValues', () => {
       expect(EnumValues.getNamesAndValues(MixedEnum)).to.deep.equal(expectedResult);
     });
   })
+
 });
